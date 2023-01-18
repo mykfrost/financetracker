@@ -10,11 +10,15 @@ export default function App() {
   const [showAddCategory, setShowAddCategory] = useState(true);
   const [showAddTransaction, setShowAddTransaction] = useState(false);
   const [categories , setCategories] = useState([]);
+  const [transactions , setTransactions] = useState([]);
   if (showAddCategory) {
     return <AddCategory setCategories={setCategories} setShowAddCategory={setShowAddCategory} />;
   }
   if (showAddTransaction) {
-    return <AddTransaction  setShowAddTransaction={setShowAddTransaction} />;
+    return
+    (
+    <AddTransaction categories={setCategories} setTransactions={setTransactions} setShowAddTransaction={setShowAddTransaction} />
+    ) ;
   }
 
   return (
