@@ -1,9 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-export default function Header({categories ,setShowAddCategory}){
-    return (
-        <ul className="navbar navbar-expand flex-row w-100 list-unstyled">
-         {categories.map((category, index) => {
+export default function Header({ categories, setShowAddCategory }) {
+  return (
+    <ul className="navbar navbar-expand flex-row w-100 list-unstyled">
+      {categories.map((category, index) => {
         return (
           <li className="p-3 nav-item" key={index}>
             {category.name}
@@ -16,6 +16,6 @@ export default function Header({categories ,setShowAddCategory}){
       >
         +
       </li>
-       </ul>
-     );
+    </ul>
+  );
 }
