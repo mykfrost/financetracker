@@ -11,6 +11,13 @@ export default function App() {
   const [showAddTransaction, setShowAddTransaction] = useState(false);
   const [categories , setCategories] = useState([]);
   const [transactions , setTransactions] = useState([]);
+   const removeTransaction = (index) =>{
+        const newTransactions = transactions.filter((transaction, idx) =>{
+            return idx !== index ;
+        });
+        setTransactions(newTransactions);
+    };
+
   if (showAddCategory) {
     return <AddCategory setCategories={setCategories} setShowAddCategory={setShowAddCategory} />;
   }
@@ -28,10 +35,10 @@ export default function App() {
       </div>
       <div className="row">
         <div className="col">
-          <TransactionTable setShowAddTransaction={setShowAddTransaction} />
+          <TransactionTable setShowAddTransaction={setShowAddTransaction}  removeTransaction={removeTransaction} transactions={transactions} />
         </div>
         <div className="col">
-          <Chart />
+          <Chart transactions={transactions} />
         </div>
       </div>
     </div>
