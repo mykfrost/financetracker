@@ -1,6 +1,6 @@
-import React from "react";
+import  React , {useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import "react-datepicker";
+import DatePicker  from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 export default function AddTransaction({
     categories ,setTransactions,
@@ -15,7 +15,7 @@ const handleSubmit = (e) =>{
         return;
     }
     const finance = {
-        date : selectDate ,
+        date : selectedDate ,
         category: categories[selectedCategory],
         amount : amount
     }
